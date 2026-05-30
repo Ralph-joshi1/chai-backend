@@ -28,6 +28,9 @@ const userSchema = new mongoose.Schema({
         type: String, // cloudinary url
         required: true,
     },
+    coverImage: {
+        type: String, // cloudinary url
+    },
     watchHistory: [{
         type: Schema.Types.ObjectId,
         ref: "Video",
@@ -47,7 +50,7 @@ userSchema.pre("save", async function (next) {
     next()
 })
 
- .methods.isPasswordCorrect = async function (password) {
+userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
 
