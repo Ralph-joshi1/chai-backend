@@ -5,8 +5,7 @@ import dns from "dns";
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 import connectDB from "./db/index.js";
-import express from "express"
-const app = express()
+import { app } from "./app.js";
 
 connectDB()
     .then(() => {
