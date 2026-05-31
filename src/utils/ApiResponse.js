@@ -1,5 +1,3 @@
-import { startTransition } from "react"
-
 class ApiResponse {
     constructor(statusCode, data, message = "success") {
         this.statusCode = statusCode
@@ -8,3 +6,5 @@ class ApiResponse {
         this.success = statusCode < 400
     }
 }
+
+export { ApiResponse }
